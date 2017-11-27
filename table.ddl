@@ -1,3 +1,5 @@
+create schema data;
+
 CREATE TABLE "data"."plays"
 (
    gameid int NOT NULL,
@@ -48,5 +50,8 @@ CREATE TABLE "data"."plays"
    play_id int PRIMARY KEY NOT NULL
 )
 ;
-CREATE UNIQUE INDEX plays_pkey ON "data"."plays"(play_id)
-;
+
+set schema data;
+
+ALTER TABLE "data"."plays" DROP "play_id";
+
